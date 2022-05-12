@@ -5,6 +5,7 @@ import datetime
 import shutil
 import argparse
 import utils
+from tkinter import *
 from contextlib import suppress
 from datetime import datetime
 import re
@@ -46,6 +47,10 @@ parser.add_argument('-w', action=argparse.BooleanOptionalAction, help="Specifies
 args = parser.parse_args() #Create object for passed argument
 args.World = args.World.lower()
 
+top = Tk()
+# Code to add widgets will go here...
+top.mainloop()
+
 for y in range(0, len(Worlds[0])):	#Validate the passed server
 	with suppress(ValueError):				
 		index = Worlds[0][y].index(args.World)
@@ -86,9 +91,10 @@ for x in range(0, len(accessories)):
 
 helmet = [item[0] for item in armour]	#Take the first element of each of the armour lists for a new list
 chest = [item[1] for item in armour]
-legs = [item[2] for item in armour]
-feet = [item[3] for item in armour]
-hands = [item[4] for item in armour]
+hands = [item[2] for item in armour]
+legs = [item[3] for item in armour]
+feet = [item[4] for item in armour]
+
 
 
 weapons = sorted(weapons, key=lambda x: x[0])	#Use lambda calculation to sort the lists based on the value of the first element (price)
@@ -127,9 +133,9 @@ if args.w == True:	#Write to file if -w option was chosen
 		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(weapons[0][3], 'Weapon', int(weapons[0][0]), weapons[0][2].title()))
 		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(helmet[0][3], 'Helmet', int(helmet[0][0]), helmet[0][2].title()))
 		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(chest[0][3], 'Chest', int(chest[0][0]), chest[0][2].title()))
+		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(hands[0][3], 'Hands', int(hands[0][0]), hands[0][2].title()))
 		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(legs[0][3], 'Legs', int(legs[0][0]), legs[0][2].title()))
 		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(feet[0][3], 'Feet', int(feet[0][0]), feet[0][2].title()))
-		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(hands[0][3], 'Hands', int(hands[0][0]), hands[0][2].title()))
 		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(accessories[0][3], 'Accessory', int(accessories[0][0]), accessories[0][2].title()))
 		cover.write('|{:^42}|{:^12}|{:^16}|{:^14}|\n'.format('', '', '', ''))
 		cover.write('|{:<42}|{:^12}|{:^16}|{:^14}|\n'.format(cheapest[0][3], 'Overall', int(cheapest[0][0]), cheapest[0][2].title()))
@@ -141,9 +147,9 @@ print('|{:^42}|{:^12}|{:^16}|{:^14}|'.format('', '', '', ''))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(weapons[0][3], 'Weapon', int(weapons[0][0]), weapons[0][2]))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(helmet[0][3], 'Helmet', int(helmet[0][0]), helmet[0][2]))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(chest[0][3], 'Chest', int(chest[0][0]), chest[0][2]))
+print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(hands[0][3], 'Hands', int(hands[0][0]), hands[0][2]))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(legs[0][3], 'Legs', int(legs[0][0]), legs[0][2]))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(feet[0][3], 'Feet', int(feet[0][0]), feet[0][2]))
-print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(hands[0][3], 'Hands', int(hands[0][0]), hands[0][2]))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(accessories[0][3], 'Accessory', int(accessories[0][0]), accessories[0][2]))
 print('|{:^42}|{:^12}|{:^16}|{:^14}|'.format('', '', '', ''))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(cheapest[0][3], 'Overall', int(cheapest[0][0]), cheapest[0][2]))

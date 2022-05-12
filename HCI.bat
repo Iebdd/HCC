@@ -1,2 +1,2 @@
 @ECHO OFF
-python "%~dp0Hannish.py"
+python "%~dp0HCI.py"
