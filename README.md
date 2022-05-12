@@ -1,7 +1,7 @@
 # HCI
 A simple Python script to determine the cheapest way to get Grade 1 Hannish Certificates of Import.
 
-Requires Python 3.8 or newer
+Requires Python 3.8 or newer and the python package *requests*, which can be downloaded via pip with `pip install requests`
 
 There is a .bat file included, which will work with the default parameters, searching Lich on Light and writing the results to stdio.
 
