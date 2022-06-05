@@ -5,7 +5,7 @@ import datetime
 import shutil
 import argparse
 import utils
-from tkinter import *
+# from tkinter import *
 from contextlib import suppress
 from datetime import datetime
 import re
@@ -47,9 +47,9 @@ parser.add_argument('-w', action=argparse.BooleanOptionalAction, help="Specifies
 args = parser.parse_args() #Create object for passed argument
 args.World = args.World.lower()
 
-top = Tk()
-# Code to add widgets will go here...
-top.mainloop()
+# top = Tk()
+# # Code to add widgets will go here...
+# top.mainloop()
 
 for y in range(0, len(Worlds[0])):	#Validate the passed server
 	with suppress(ValueError):				
@@ -155,4 +155,4 @@ print('|{:^42}|{:^12}|{:^16}|{:^14}|'.format('', '', '', ''))
 print('|{:<42}|{:^12}|{:^16}|{:^14}|'.format(cheapest[0][3], 'Overall', int(cheapest[0][0]), cheapest[0][2]))
 print('{:_^89}'.format('_'))
 
-input("Press Enter to close this window")
+input("Press Enter to exit")
